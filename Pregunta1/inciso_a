@@ -1,1 +1,15 @@
+from google.colab import drive
+drive.mount('/content/drive')
+archivo='/content/drive/MyDrive/inf354/NFLX.csv'
+import pandas as pd
+contenido = pd.read_csv(archivo)
+print(contenido)
+archivo='/content/drive/MyDrive/inf354/NFLX.csv'
+df = pd.read_csv(archivo)
+print("Primer Cuartil")
+print(df.quantile([0.25]))
+print("Percentil 90")
+print(df.quantile([0.90]))
+print("Percentil 95")
+print(df.quantile([0.95]))
 
