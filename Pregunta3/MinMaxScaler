@@ -1,0 +1,8 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+archivo='/content/drive/MyDrive/inf354/NFLX.csv'
+df = pd.read_csv(archivo)
+df = pd.DataFrame.reindex(df,columns = ['Open', 'High', 'Low', 'Close','Adj Close', 'Volume']) 
+datosMinMax=preprocessing.MinMaxScaler().fit_transform(df)
+datosMinMax
