@@ -1,0 +1,9 @@
+import pandas as pd 
+import matplotlib.pyplot as plt 
+archivo='/content/drive/MyDrive/inf354/NFLX.csv'
+df = pd.read_csv(archivo)
+df[['Año','Mes','Dia']]=df.Date.str.split('-',expand=True)
+del df['Date']
+df.set_index('Año',inplace = True)
+df = pd.DataFrame.reindex(df,columns = [ 'Mes', 'Dia', 'Open', 'High', 'Low', 'Close','Adj Close', 'Volume']) 
+df.plot()
